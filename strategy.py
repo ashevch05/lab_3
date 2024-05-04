@@ -31,7 +31,7 @@ class Context:
     def strategy(self):
         return self._strategy
 
-    @strategy.calculate
+    @strategy.setter
     def set_strategy(self, strategy):
         self._strategy = strategy
 
@@ -41,7 +41,7 @@ class Context:
 
 if __name__ == "__main__":
     context = Context(GCDStrategy())
-    print(f"Найбільший спільний дільник: {context.execute_strategy(24, 18)}")
+    print(f"Найбільший спільний дільник: {context.calculate_strategy(24, 18)}")
 
-    context.set_strategy(LCMStrategy())
-    print(f"Найменше спільне кратне: {context.execute_strategy(24, 18)}")
+    context = Context(LCMStrategy())
+    print(f"Найменше спільне кратне: {context.calculate_strategy(24, 18)}")
